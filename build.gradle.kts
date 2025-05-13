@@ -35,4 +35,9 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    jvmArgs = listOf(
+        "-javaagent:${project.configurations.testRuntimeClasspath.get()
+            .resolvedConfiguration.resolvedArtifacts
+            .find { it.name == "mockito-core" }?.file}"
+    )
 }
