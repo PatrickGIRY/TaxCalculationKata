@@ -46,7 +46,11 @@ class PrintDetailedInvoiceTest {
                 generateInvoiceText);
 
         commandLines = List.of(new CommandLine(new Quatity(1), new Product("Livre"), new UnitPriceExcludingTax("12.49")));
-        invoiceLines = List.of(new InvoiceLine(new Quatity(1), new Product("Livre"), new PriceIncludingAllTaxes("12.49")));
+        invoiceLines = List.of(new InvoiceLine(
+                new Quatity(1),
+                new TaxExemptProduct("Livre"),
+                new AmountOfTaxes("0.00"),
+                new PriceIncludingAllTaxes("12.49")));
     }
 
     @Test

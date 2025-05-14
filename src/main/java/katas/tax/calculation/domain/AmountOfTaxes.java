@@ -1,4 +1,4 @@
-package katas.tax.calculation.functions;
+package katas.tax.calculation.domain;
 
 import java.math.BigDecimal;
 

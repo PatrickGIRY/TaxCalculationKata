@@ -1,6 +1,7 @@
 package katas.tax.calculation.functions;
 
 import katas.tax.calculation.domain.AmountIncludesAllTaxes;
+import katas.tax.calculation.domain.AmountOfTaxes;
 import katas.tax.calculation.domain.InvoiceLine;
 
 import java.util.List;
