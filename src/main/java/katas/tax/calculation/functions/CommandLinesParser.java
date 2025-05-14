@@ -21,7 +21,7 @@ public class CommandLinesParser {
     }
 
     private static CommandLine parseLine(String input) {
-        final var matcher = LINE_PATTERN.matcher(input);
+        final var matcher = LINE_PATTERN.matcher(input.trim());
         if (matcher.lookingAt() && matcher.groupCount() == 3) {
             return new CommandLine(
                     new Quatity(Integer.parseInt(matcher.group(1))),

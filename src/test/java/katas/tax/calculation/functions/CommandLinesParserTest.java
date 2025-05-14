@@ -39,6 +39,20 @@ class CommandLinesParserTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
+            " 1 flacon de parfum importé à 27.99",
+            "1 flacon de parfum importé à 27.99 "
+    })
+    void should_parse_a_command_line_ignoring_spaces_at_beginning_and_at_end(String input) {
+
+        List<CommandLine> commandLines = commandLinesParser.parse(input);
+
+        assertThat(commandLines).containsExactly(
+          new CommandLine(new Quatity(1), new Product("flacon de parfum importé"), new UnitPriceExcludingTax("27.99"))
+        );
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
             "flacon de parfum importé à 27.99",
             "flacon de parfum importé 27.99",
             "1 flacon de parfum importé 27.99",
