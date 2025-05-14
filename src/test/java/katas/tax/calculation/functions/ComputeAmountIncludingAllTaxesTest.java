@@ -33,7 +33,7 @@ class ComputeAmountIncludingAllTaxesTest {
         List<InvoiceLine> invoiceLines = List.of(
                 new InvoiceLine(
                         new Quatity(1),
-                        new TaxedProduct("Livre"),
+                        new TaxExemptProduct("Livre"),
                         new AmountOfTaxes("0.00"),
                         new PriceIncludingAllTaxes("2.50"))
         );
@@ -49,7 +49,7 @@ class ComputeAmountIncludingAllTaxesTest {
         List<InvoiceLine> invoiceLines = List.of(
                 new InvoiceLine(
                         new Quatity(1),
-                        new TaxedProduct("Livre"),
+                        new TaxExemptProduct("Livre"),
                         new AmountOfTaxes("0.00"),
                         new PriceIncludingAllTaxes("2.50")),
                 new InvoiceLine(
